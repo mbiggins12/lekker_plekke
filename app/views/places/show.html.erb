@@ -1,8 +1,13 @@
 <h1>Lekker Plekke</h1>
 
-
-<%-# @place.each do |ind| %>
-	<%= "#{@place[:name]}: "%>
-	<%= @place[:description] %>
+<h3><%= "#{@place.name}: "%></h3>
+<p><%= @place.description %></p>
+<p><br>
+	<%= link_to 'All Plekkes', places_path %>
+	<%= link_to 'Edit Plekke', edit_place_path %>
+	<%= link_to 'Delete Plekke', places_path,
+				method: :delete,
+				data: {confirm: 'Are you sure?'} %>
+</p>
 
 

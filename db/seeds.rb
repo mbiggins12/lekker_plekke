@@ -6,6 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Place.delete_all
+
+<-# ^^^This makes sure the database isn't populated by %>
+<-# duplicate data %>
 
 place_cape_town = [
   { name: "Table Mountain", description: "A plateau formed over thousands of years of erosion, which overlooks the whole city while offering gorgeous 360s of the ocean, city, and surrounding mountains." },
@@ -13,4 +17,11 @@ place_cape_town = [
   { name: "Waterfront Market", description: "An open market in Cape Town near the beach that is notable because of its absence of having been visited by me." },
 ]
 
-places = Place.create(place_cape_town)
+places = Place.create!(place_cape_town)
+
+
+<-# Place.create!(place_cape_town) %>
+<-# ^^^ Same as working code %>
+<-# Place.create! name: "Table Mountain", description: "A plateau formed over thousands of years of erosion, which overlooks the whole city while offering gorgeous 360s of the ocean, city, and surrounding mountains." %>
+<-# Place.create! name: "WoolsWorth", description: "The premier shopping establishment in all of Cape Town and quite possibly the entirety of South Africa." %>
+<-# ^^^ Same as working code %>

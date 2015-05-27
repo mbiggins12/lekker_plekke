@@ -1,7 +1,10 @@
-<h1>Notable Places in Cape Town</h1>
-
-<ol>
+<h1>Notable Plekkes in Cape Town</h1>
+<strong>
 <% @places.each do |place| %>
-	<li><%= place[:name] %></li>
+	<p><%= link_to place.name, place_path(place) %></p>
 <% end %>
-</ol>
+</strong>
+
+<p><br><br><%= link_to 'New Plekke, Bru', new_place_path %>
+</p>
+
