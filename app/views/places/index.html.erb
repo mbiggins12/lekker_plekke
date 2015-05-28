@@ -1,10 +1,18 @@
 <h1>Notable Plekkes in Cape Town</h1>
-<strong>
 <% @places.each do |place| %>
-	<p><%= link_to place.name, place_path(place) %></p>
+	<strong><h3>
+		<%= link_to place.name, place_path(place) %>
+	</h3></strong>
+	<p>
+	<%= link_to 'Edit Plekke', edit_place_path(place) %>
+	<%= link_to 'Delete Plekke', places_path(place),
+				method: :delete,
+				data: {confirm: 'Are you sure?'} %>
+	<br><br><br></p>
 <% end %>
-</strong>
 
-<p><br><br><%= link_to 'New Plekke, Bru', new_place_path %>
+
+<p><br><br>
+	<%= link_to 'New Plekke, Bru', new_place_path %>
 </p>
 

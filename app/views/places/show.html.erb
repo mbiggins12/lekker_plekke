@@ -2,12 +2,22 @@
 
 <h3><%= "#{@place.name}: "%></h3>
 <p><%= @place.description %></p>
+
+<h2>Comments</h2>
+<%= render @place.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
 <p><br>
-	<%= link_to 'All Plekkes', places_path %>
 	<%= link_to 'Edit Plekke', edit_place_path %>
 	<%= link_to 'Delete Plekke', places_path,
 				method: :delete,
 				data: {confirm: 'Are you sure?'} %>
+</p>
+
+<p>
+	<%= link_to 'All Plekkes', places_path %>
 </p>
 
 
